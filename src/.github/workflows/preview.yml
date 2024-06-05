@@ -1,12 +1,12 @@
-name: Deploy Next.js to Vercel
+name: Deploy Preview Branch to Vercel
 
 on:
   push:
-    branches:
-      - main  # Trigger deployment on pushes to the main branch
+    branches-ignore:
+      - main  # Ignore pushes to the main branch
   pull_request:
-    branches:
-      - main
+    branches-ignore:
+      - main  # Ignore pull requests targeting the main branch
 
 jobs:
   deploy:
@@ -28,5 +28,5 @@ jobs:
 
       - name: Deploy to Vercel
         env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}  
-        run: npx vercel --prod
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel --prod --pre
