@@ -31,3 +31,9 @@ body {
     text-wrap: balance;
   }
 }
+
+#sticky-element {
+  top: 10px; 
+  z-index: 1000; 
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}

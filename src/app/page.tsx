@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import myData from "../data/questions.json";
 
 export type Answer = {
@@ -22,8 +23,38 @@ export type Data = {
 export default function Home() {
   const data: Data = myData;
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const element = document.getElementById("sticky-element");
+      if (element) {
+        const scrollY = window.scrollY;
+        if (scrollY > lastScrollY) {
+          // Scrolling down
+          element.style.opacity = "0.5";
+          element.style.transform = "scale(0.7)";
+        } else {
+          // Scrolling up
+          element.style.opacity = "1";
+          element.style.transform = "scale(1)";
+        }
+        lastScrollY = scrollY;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="items-center justify-center min-h-screen flex flex-col p-4 m-4">
+      <div
+        id="sticky-element"
+        className="flex justify-center items-center bg-blue-500 rounded-full text-white text-center w-20 h-20 fixed right-2"
+      >
+        34%
+      </div>
       {data.common.questions.map((item, questionIndex) => {
         return (
           <div key={questionIndex} className="relative">
@@ -36,7 +67,7 @@ export default function Home() {
                   {item.answers.map((answer, answerIndex) => {
                     return (
                       <label
-                        key={`{questionIndex}-${answerIndex}`}
+                        key={`${questionIndex}-${answerIndex}`}
                         className="block bg-blue-500 text-white p-3 rounded-lg cursor-pointer hover:bg-blue-600"
                       >
                         <input
@@ -64,7 +95,7 @@ export default function Home() {
                   {item.answers.map((answer, answerIndex) => {
                     return (
                       <label
-                        key={`{questionIndex}-${answerIndex}`}
+                        key={`${questionIndex}-${answerIndex}`}
                         className="block bg-blue-500 text-white p-3 rounded-lg cursor-pointer hover:bg-blue-600"
                       >
                         <input
