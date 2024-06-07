@@ -44,9 +44,18 @@ export default function Home() {
         }
         lastScrollY = scrollY;
       }
+      // Save scroll position to localStorage
+      localStorage.setItem("scrollPosition", window.scrollY.toString());
     };
 
     window.addEventListener("scroll", handleScroll);
+
+    // Retrieve scroll position from localStorage
+    const storedScrollPosition = localStorage.getItem("scrollPosition");
+    if (storedScrollPosition) {
+      window.scrollTo(0, parseInt(storedScrollPosition, 10));
+    }
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
