@@ -86,7 +86,6 @@ export default function Home() {
         {calculateScorePercentage().toFixed(0)}%
       </div>
       {data.common.questions.map((item, questionIndex) => {
-        const correctAnswerIndex = item.answers.findIndex(answer => answer.correct);
         return (
           <div key={questionIndex} className="relative">
             <div className="flex flex-col p-4">
