@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import myData from "../data/questions.json";
 
 export type Answer = {
@@ -22,6 +22,9 @@ export type Data = {
 
 export default function Home() {
   const data: Data = myData;
+  const [selectedAnswers, setSelectedAnswers] = useState<{ [key: number]: number | null }>({});
+  const [score, setScore] = useState(0);
+  const [answeredQuestions, setAnsweredQuestions] = useState(0);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -47,15 +50,34 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleAnswerSelection = (questionIndex: number, answerIndex: number) => {
+    if (selectedAnswers[questionIndex] == null) {
+      const correctAnswer = data.common.questions[questionIndex].answers.findIndex(answer => answer.correct);
+      if (answerIndex === correctAnswer) {
+        setScore(score + 1);
+      }
+      setSelectedAnswers({
+        ...selectedAnswers,
+        [questionIndex]: answerIndex,
+      });
+      setAnsweredQuestions(answeredQuestions + 1);
+    }
+  };
+
+  const calculateScorePercentage = () => {
+    return answeredQuestions > 0 ? (score / answeredQuestions) * 100 : 0;
+  };
+
   return (
     <div className="items-center justify-center min-h-screen flex flex-col p-4 m-4">
       <div
         id="sticky-element"
         className="flex justify-center items-center bg-blue-500 rounded-full text-white text-center w-20 h-20 fixed right-2"
       >
-        34%
+        {calculateScorePercentage().toFixed(0)}%
       </div>
       {data.common.questions.map((item, questionIndex) => {
+        const correctAnswerIndex = item.answers.findIndex(answer => answer.correct);
         return (
           <div key={questionIndex} className="relative">
             <div className="flex flex-col p-4">
@@ -65,18 +87,31 @@ export default function Home() {
                 </h2>
                 <div className="space-y-2">
                   {item.answers.map((answer, answerIndex) => {
+                    const isSelected = selectedAnswers[questionIndex] === answerIndex;
+                    const isCorrect = answer.correct;
+                    const revealAnswer = selectedAnswers[questionIndex] != null;
+
                     return (
                       <label
                         key={`${questionIndex}-${answerIndex}`}
-                        className="block bg-blue-500 text-white p-3 rounded-lg cursor-pointer hover:bg-blue-600"
+                        className={`block p-3 rounded-lg cursor-pointer hover:bg-blue-600 ${
+                          revealAnswer
+                            ? isCorrect
+                              ? "bg-green-500"
+                              : isSelected
+                              ? "bg-red-500"
+                              : "bg-blue-500"
+                            : "bg-blue-500 text-white"
+                        }`}
+                        onClick={() => handleAnswerSelection(questionIndex, answerIndex)}
                       >
                         <input
                           type="radio"
-                          name="option"
+                          name={`option-${questionIndex}`}
                           className="hidden"
-                          value="paris"
+                          disabled={revealAnswer}
                         />
-                        {answer.correct && `✅`} {answer.text}
+                        {revealAnswer && (isCorrect ? "✅" : isSelected ? "❌" : "")} {answer.text}
                       </label>
                     );
                   })}
@@ -93,18 +128,31 @@ export default function Home() {
                 </h2>
                 <div className="space-y-2">
                   {item.answers.map((answer, answerIndex) => {
+                    const isSelected = selectedAnswers[questionIndex] === answerIndex;
+                    const isCorrect = answer.correct;
+                    const revealAnswer = selectedAnswers[questionIndex] != null;
+
                     return (
                       <label
                         key={`${questionIndex}-${answerIndex}`}
-                        className="block bg-blue-500 text-white p-3 rounded-lg cursor-pointer hover:bg-blue-600"
+                        className={`block p-3 rounded-lg cursor-pointer hover:bg-blue-600 ${
+                          revealAnswer
+                            ? isCorrect
+                              ? "bg-green-500"
+                              : isSelected
+                              ? "bg-red-500"
+                              : "bg-blue-500"
+                            : "bg-blue-500 text-white"
+                        }`}
+                        onClick={() => handleAnswerSelection(questionIndex, answerIndex)}
                       >
                         <input
                           type="radio"
-                          name="option"
+                          name={`option-${questionIndex}`}
                           className="hidden"
-                          value="paris"
+                          disabled={revealAnswer}
                         />
-                        {answer.correct && `✅`} {answer.texten || answer.text}
+                        {revealAnswer && (isCorrect ? "✅" : isSelected ? "❌" : "")} {answer.texten || answer.text}
                       </label>
                     );
                   })}
