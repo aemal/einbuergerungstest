@@ -41,6 +41,7 @@ const Navbar = () => {
               <Link href="/view1" className={`block text-black p-2 rounded ${pathname === '/view1' ? 'bg-gray-200' : ''}`} onClick={closeDrawer}>Interactive</Link>
               <Link href="/view2" className={`block text-black p-2 rounded ${pathname === '/view2' ? 'bg-gray-200' : ''}`} onClick={closeDrawer}>Interactive Random</Link>
               <Link href="/view3" className={`block text-black p-2 rounded ${pathname === '/view3' ? 'bg-gray-200' : ''}`} onClick={closeDrawer}>Read Only</Link>
+              <Link href="https://buymeacoffee.com/aemal" className={`block text-black p-2 rounded`} onClick={closeDrawer}>Buy me a coffee!</Link>
             </div>
           </div>
         </div>
