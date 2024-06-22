@@ -1,4 +1,3 @@
-// app/head.tsx
 import React from 'react';
 import Head from 'next/head';
 
@@ -10,6 +9,7 @@ const CustomHead: React.FC = () => {
       <link rel="icon" href="/icons/icon-192x192.png" />
       <meta name="description" content="Your App Description" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <script defer src="https://cloud.umami.is/script.js" data-website-id="48da7f37-ce2f-4609-94c0-b2d96f9059c6"></script>
     </Head>
   );
 };
