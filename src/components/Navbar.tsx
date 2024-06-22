@@ -40,8 +40,6 @@ const Navbar = () => {
             <div className="space-y-4">
               <Link href="/view1" className={`block text-black p-2 rounded ${pathname === '/view1' ? 'bg-gray-200' : ''}`} onClick={closeDrawer}>View 1</Link>
               <Link href="/view2" className={`block text-black p-2 rounded ${pathname === '/view2' ? 'bg-gray-200' : ''}`} onClick={closeDrawer}>View 2</Link>
-              <Link href="/view3" className={`block text-black p-2 rounded ${pathname === '/view3' ? 'bg-gray-200' : ''}`} onClick={closeDrawer}>View 3</Link>
-              <Link href="/test" className={`block text-black p-2 rounded ${pathname === '/test' ? 'bg-gray-200' : ''}`} onClick={closeDrawer}>Test</Link>
             </div>
           </div>
         </div>

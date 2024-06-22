@@ -1,13 +1,23 @@
 "use client";
 import { NextPage } from 'next';
+import myData from "../../data/questions.json";
+import NonInteractiveQuestionCard from "../../components/NonInteractiveQuestionCard";
+import { Data } from "../../types";
 
-const Home: NextPage = () => {
+const View2: NextPage = () => {
+  const data: Data = myData;
+
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold">View 2</h1>
-      <p className="mt-2">Welcome to the home page.</p>
+    <div className="items-center justify-center min-h-screen flex flex-col p-4 m-4">
+      {data.common.questions.map((item, questionIndex) => (
+        <NonInteractiveQuestionCard
+          key={questionIndex}
+          question={item}
+          questionIndex={questionIndex}
+        />
+      ))}
     </div>
   );
 };
 
-export default Home;
+export default View2;
