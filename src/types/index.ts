@@ -25,8 +25,8 @@ export interface LandsData {
 
 export interface Data {
   common: {
-    date: string;
+    date?: string;
     questions: Question[];
   };
-  lands: LandsData;
+  lands?: LandsData;
 }

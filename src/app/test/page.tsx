@@ -1,5 +1,4 @@
 "use client";
-// src/app/test/page.tsx
 import { useEffect, useState } from "react";
 import QuestionCard from "../../components/QuestionCard";
 import Score from "../../components/Score";
@@ -69,12 +68,23 @@ export default function TestPage() {
       );
       if (answerIndex === correctAnswer) {
         setScore(score + 1);
+      } else {
+        storeWrongQuestion(questions[questionIndex]);
       }
       setSelectedAnswers({
         ...selectedAnswers,
         [questionIndex]: answerIndex,
       });
       setAnsweredQuestions(answeredQuestions + 1);
+    }
+  };
+
+  const storeWrongQuestion = (wrongQuestion: Question) => {
+    const storedWrongQuestions = JSON.parse(localStorage.getItem("wrongQuestions") || "[]");
+    const isDuplicate = storedWrongQuestions.some((q: Question) => q.question === wrongQuestion.question);
+    if (!isDuplicate) {
+      storedWrongQuestions.push(wrongQuestion);
+      localStorage.setItem("wrongQuestions", JSON.stringify(storedWrongQuestions));
     }
   };
 

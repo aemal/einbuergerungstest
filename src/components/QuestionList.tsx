@@ -1,8 +1,9 @@
+// src/components/QuestionList.tsx
 "use client";
 import { useEffect, useState } from "react";
 import QuestionCard from "./QuestionCard";
 import Score from "./Score";
-import { Data } from "../types";
+import { Data, Question } from "../types";
 
 interface QuestionListProps {
   data: Data;
@@ -36,6 +37,9 @@ export default function QuestionList({ data, randomQuestions }: QuestionListProp
       const correctAnswer = questions[questionIndex].answers.findIndex(answer => answer.correct);
       if (answerIndex === correctAnswer) {
         setScore(score + 1);
+        removeWrongQuestion(questions[questionIndex]);
+      } else {
+        storeWrongQuestion(questions[questionIndex]);
       }
       setSelectedAnswers({
         ...selectedAnswers,
@@ -43,6 +47,21 @@ export default function QuestionList({ data, randomQuestions }: QuestionListProp
       });
       setAnsweredQuestions(answeredQuestions + 1);
     }
+  };
+
+  const storeWrongQuestion = (wrongQuestion: Question) => {
+    const storedWrongQuestions = JSON.parse(localStorage.getItem("wrongQuestions") || "[]");
+    const isDuplicate = storedWrongQuestions.some((q: Question) => q.question === wrongQuestion.question);
+    if (!isDuplicate) {
+      storedWrongQuestions.push(wrongQuestion);
+      localStorage.setItem("wrongQuestions", JSON.stringify(storedWrongQuestions));
+    }
+  };
+
+  const removeWrongQuestion = (correctQuestion: Question) => {
+    const storedWrongQuestions = JSON.parse(localStorage.getItem("wrongQuestions") || "[]");
+    const updatedWrongQuestions = storedWrongQuestions.filter((q: Question) => q.question !== correctQuestion.question);
+    localStorage.setItem("wrongQuestions", JSON.stringify(updatedWrongQuestions));
   };
 
   const calculateScorePercentage = () => {
