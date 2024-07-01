@@ -5,6 +5,7 @@ interface QuestionCardProps {
   questionIndex: number;
   selectedAnswers: { [key: number]: number | null };
   handleAnswerSelection: (questionIndex: number, answerIndex: number) => void;
+  isState?: boolean;
 }
 
 const QuestionCard = ({
@@ -14,7 +15,7 @@ const QuestionCard = ({
   handleAnswerSelection,
 }: QuestionCardProps) => {
   return (
-    <div className="relative">
+    <div className={`relative ${question.isState ? 'bg-gray-400' : ''} p-4 rounded-lg shadow-md mb-4`}>
       <QuestionCardContent
         questionText={question.question}
         answers={question.answers}

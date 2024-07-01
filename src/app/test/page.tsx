@@ -1,9 +1,11 @@
 "use client";
+// src/app/test/page.tsx
 import { useEffect, useState } from "react";
 import QuestionCard from "../../components/QuestionCard";
 import Score from "../../components/Score";
 import myData from "../../data/questions.json";
-import { Data, Question } from "../../types";
+import { Data, Question, Land } from "../../types";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 interface QuestionListProps {
   data: Data;
@@ -21,6 +23,7 @@ function shuffleArray(array: any[]) {
 function CountdownTimer({ initialMinutes = 60 }) {
   const [timeLeft, setTimeLeft] = useState(initialMinutes * 60);
 
+  useScrollAnimation("countdown-circle");
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
@@ -35,7 +38,7 @@ function CountdownTimer({ initialMinutes = 60 }) {
   };
 
   return (
-    <div className="flex justify-center items-center bg-green-500 rounded-full text-white text-center w-20 h-20 fixed right-2 top-24">
+    <div id="countdown-circle" className="scroll-animation flex justify-center items-center bg-green-500 rounded-full text-white text-center w-20 h-20 fixed right-5 top-24 z-10">
       {formatTime(timeLeft)}
     </div>
   );
@@ -43,22 +46,23 @@ function CountdownTimer({ initialMinutes = 60 }) {
 
 export default function TestPage() {
   const [questions, setQuestions] = useState<Question[]>([]);
-
-  useEffect(() => {
-    const shuffledQuestions: Question[] = shuffleArray(myData.common?.questions).slice(0, 30);
-    setQuestions(shuffledQuestions);
-  }, []);
-
-  const [selectedAnswers, setSelectedAnswers] = useState<{
-    [key: number]: number | null;
-  }>({});
+  const [selectedAnswers, setSelectedAnswers] = useState<{ [key: number]: number | null }>({});
   const [score, setScore] = useState(0);
   const [answeredQuestions, setAnsweredQuestions] = useState(0);
 
-  const handleAnswerSelection = (
-    questionIndex: number,
-    answerIndex: number
-  ) => {
+  useEffect(() => {
+    const commonQuestions: Question[] = shuffleArray(myData.common?.questions).slice(0, 30);
+    
+    const selectedState = localStorage.getItem("selectedState");
+    const stateData = myData.lands.lands.find((land: Land) => land.name === selectedState);
+    const stateQuestions: Question[] = stateData ? shuffleArray(stateData.questions).slice(0, 3).map(q => ({ ...q, isState: true })) : [];
+    console.log("bbb stateQuestions", stateQuestions)
+    const allQuestions = [...commonQuestions, ...stateQuestions];
+    console.log("aaa allQuestions:", allQuestions)
+    setQuestions(allQuestions);
+  }, []);
+
+  const handleAnswerSelection = (questionIndex: number, answerIndex: number) => {
     if (selectedAnswers[questionIndex] == null) {
       const correctAnswer = questions[questionIndex].answers.findIndex(
         (answer: { correct: boolean }) => answer.correct
