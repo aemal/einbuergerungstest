@@ -38,7 +38,7 @@ function CountdownTimer({ initialMinutes = 60 }) {
   };
 
   return (
-    <div id="countdown-circle" className="scroll-animation flex justify-center items-center bg-green-500 rounded-full text-white text-center w-20 h-20 fixed right-5 top-24 z-10">
+    <div id="countdown-circle" className="scroll-animation flex justify-center items-center bg-blue-500 rounded-full text-white text-center w-20 h-20 fixed right-5 top-24 z-10">
       {formatTime(timeLeft)}
     </div>
   );

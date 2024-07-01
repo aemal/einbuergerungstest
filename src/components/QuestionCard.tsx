@@ -1,4 +1,5 @@
-import { Answer, Question } from '../types';
+import { Answer, Question } from "../types";
+import Image from "next/image";
 
 interface QuestionCardProps {
   question: Question;
@@ -15,7 +16,19 @@ const QuestionCard = ({
   handleAnswerSelection,
 }: QuestionCardProps) => {
   return (
-    <div className={`relative ${question.isState ? 'bg-gray-400' : ''} p-4 rounded-lg shadow-md mb-4`}>
+    <div
+      className={`relative ${
+        question.isState ? "bg-gray-400" : ""
+      } p-4 rounded-lg shadow-md mb-4`}
+    >
+      {question.image && (
+        <Image
+          src={`/images/${question.image}`} // Construct the image path
+          alt={question.image || ""}
+          width={500} // Set the desired width
+          height={300} // Set the desired height
+        />
+      )}
       <QuestionCardContent
         questionText={question.question}
         answers={question.answers}
@@ -59,6 +72,7 @@ const QuestionCardContent = ({
     <div className="flex flex-col p-4">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-xl font-bold mb-4 text-black">{questionText}</h2>
+        {}
         <div className="space-y-2">
           {answers.map((answer, answerIndex) => {
             const isSelected = selectedAnswers[questionIndex] === answerIndex;
@@ -68,7 +82,7 @@ const QuestionCardContent = ({
             return (
               <label
                 key={`${questionIndex}${isEnglish ? "-en" : ""}-${answerIndex}`}
-                className={`block p-3 rounded-lg cursor-pointer hover:bg-blue-600 ${
+                className={`block p-3 rounded-lg cursor-pointer ${
                   revealAnswer
                     ? isCorrect
                       ? "bg-green-500"
@@ -77,7 +91,9 @@ const QuestionCardContent = ({
                       : "bg-blue-500"
                     : "bg-blue-500 text-white"
                 }`}
-                onClick={() => handleAnswerSelection(questionIndex, answerIndex)}
+                onClick={() =>
+                  handleAnswerSelection(questionIndex, answerIndex)
+                }
               >
                 <input
                   type="radio"
@@ -85,7 +101,8 @@ const QuestionCardContent = ({
                   className="hidden"
                   disabled={revealAnswer}
                 />
-                {revealAnswer && (isCorrect ? "✅" : isSelected ? "❌" : "")} {isEnglish && answer.texten ? answer.texten : answer.text}
+                {revealAnswer && (isCorrect ? "✅" : isSelected ? "❌" : "")}{" "}
+                {isEnglish && answer.texten ? answer.texten : answer.text}
               </label>
             );
           })}
