@@ -1,4 +1,3 @@
-// src/components/QuestionList.tsx
 "use client";
 import { useEffect, useState } from "react";
 import QuestionCard from "./QuestionCard";

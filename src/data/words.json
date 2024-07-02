@@ -1,0 +1,674 @@
+[
+  {
+    "German": "Waffenbesitz",
+    "English": "ownership of weapons"
+  },
+  {
+    "German": "Faustrecht",
+    "English": "law of the fist"
+  },
+  {
+    "German": "Meinungsfreiheit",
+    "English": "freedom of speech"
+  },
+  {
+    "German": "Selbstjustiz",
+    "English": "vigilantism"
+  },
+  {
+    "German": "Volksgesetz",
+    "English": "People's Law"
+  },
+  {
+    "German": "Bundesgesetz",
+    "English": "Federal Law"
+  },
+  {
+    "German": "Grundgesetz",
+    "English": "Basic Law"
+  },
+  {
+    "German": "Unterhaltung",
+    "English": "entertainment"
+  },
+  {
+    "German": "Arbeit",
+    "English": "work"
+  },
+  {
+    "German": "Wohnung",
+    "English": "housing"
+  },
+  {
+    "German": "Menschenwürde",
+    "English": "human dignity"
+  },
+  {
+    "German": "Asyl",
+    "English": "asylum"
+  },
+  {
+    "German": "Bundesverfassung",
+    "English": "Federal Constitution"
+  },
+  {
+    "German": "Gesetzbuch",
+    "English": "Code of Laws"
+  },
+  {
+    "German": "Verfassungsvertrag",
+    "English": "Constitutional Treaty"
+  },
+  {
+    "German": "Militärdienst",
+    "English": "military service"
+  },
+  {
+    "German": "Zwangsarbeit",
+    "English": "forced labor"
+  },
+  {
+    "German": "Religionsfreiheit",
+    "English": "freedom of religion"
+  },
+  {
+    "German": "tolerant",
+    "English": "tolerant"
+  },
+  {
+    "German": "gesetzestreu",
+    "English": "law-abiding"
+  },
+  {
+    "German": "verfassungswidrig",
+    "English": "unconstitutional"
+  },
+  {
+    "German": "Monarchie",
+    "English": "Monarchy"
+  },
+  {
+    "German": "Diktatur",
+    "English": "Dictatorship"
+  },
+  {
+    "German": "Republik",
+    "English": "Republic"
+  },
+  {
+    "German": "Fürstentum",
+    "English": "Principality"
+  },
+  {
+    "German": "Löwe",
+    "English": "lion"
+  },
+  {
+    "German": "Adler",
+    "English": "eagle"
+  },
+  {
+    "German": "Bär",
+    "English": "bear"
+  },
+  {
+    "German": "Pferd",
+    "English": "horse"
+  },
+  {
+    "German": "Pressezensur",
+    "English": "press censorship"
+  },
+  {
+    "German": "Oberlandesgericht",
+    "English": "Higher Regional Court"
+  },
+  {
+    "German": "Amtsgericht",
+    "English": "District Court"
+  },
+  {
+    "German": "Bundesverfassungsgericht",
+    "English": "Federal Constitutional Court"
+  },
+  {
+    "German": "Verwaltungsgericht",
+    "English": "Administrative Court"
+  },
+  {
+    "German": "Verband",
+    "English": "association"
+  },
+  {
+    "German": "Ältestenrat",
+    "English": "Council of Elders"
+  },
+  {
+    "German": "Opposition",
+    "English": "opposition"
+  },
+  {
+    "German": "Wahlpflicht",
+    "English": "Voting obligation"
+  },
+  {
+    "German": "Schulpflicht",
+    "English": "Compulsory schooling"
+  },
+  {
+    "German": "Schweigepflicht",
+    "English": "Confidentiality obligation"
+  },
+  {
+    "German": "Religionspflicht",
+    "English": "Religious obligation"
+  },
+  {
+    "German": "Sozialhilfe",
+    "English": "Social welfare"
+  },
+  {
+    "German": "Kindergeld",
+    "English": "Child benefit"
+  },
+  {
+    "German": "Wohngeld",
+    "English": "Housing allowance"
+  },
+  {
+    "German": "Jugendlichen",
+    "English": "youth"
+  },
+  {
+    "German": "Bundesverdienstkreuz",
+    "English": "Federal Cross of Merit"
+  },
+  {
+    "German": "Bundesadler",
+    "English": "Federal Eagle"
+  },
+  {
+    "German": "speziell",
+    "English": "special"
+  },
+  {
+    "German": "geheim",
+    "English": "secret"
+  },
+  {
+    "German": "berufsbezogen",
+    "English": "occupation-based"
+  },
+  {
+    "German": "geschlechtsabhängig",
+    "English": "gender-dependent"
+  },
+  {
+    "German": "Zensuswahlrecht",
+    "English": "Census voting system"
+  },
+  {
+    "German": "Dreiklassenwahlrecht",
+    "English": "Three-class voting system"
+  },
+  {
+    "German": "Zulassungsgrenze",
+    "English": "Admission limit"
+  },
+  {
+    "German": "Basiswert",
+    "English": "Base value"
+  },
+  {
+    "German": "Richtlinie",
+    "English": "Guideline"
+  },
+  {
+    "German": "Gesetzgebung",
+    "English": "legislation"
+  },
+  {
+    "German": "Staatsgewalt",
+    "English": "state power"
+  },
+  {
+    "German": "Landesregierung",
+    "English": "state government"
+  },
+  {
+    "German": "Bundesregierung",
+    "English": "federal government"
+  },
+  {
+    "German": "Verfassung",
+    "English": "constitution"
+  },
+  {
+    "German": "Rechtsstaat",
+    "English": "rule of law"
+  },
+  {
+    "German": "Demokratie",
+    "English": "democracy"
+  },
+  {
+    "German": "Sozialstaat",
+    "English": "welfare state"
+  },
+  {
+    "German": "Bundesstaat",
+    "English": "federal state"
+  },
+  {
+    "German": "Kommunalwahl",
+    "English": "local election"
+  },
+  {
+    "German": "Landtagswahl",
+    "English": "state election"
+  },
+  {
+    "German": "Bundestagswahl",
+    "English": "federal election"
+  },
+  {
+    "German": "Europawahl",
+    "English": "European election"
+  },
+  {
+    "German": "Bundespräsident",
+    "English": "Federal President"
+  },
+  {
+    "German": "Bundeskanzler",
+    "English": "Federal Chancellor"
+  },
+  {
+    "German": "Ministerpräsident",
+    "English": "Minister President"
+  },
+  {
+    "German": "Regierungschef",
+    "English": "head of government"
+  },
+  {
+    "German": "Parlament",
+    "English": "parliament"
+  },
+  {
+    "German": "Bundestag",
+    "English": "Bundestag"
+  },
+  {
+    "German": "Bundesrat",
+    "English": "Federal Council"
+  },
+  {
+    "German": "Gesetz",
+    "English": "law"
+  },
+  {
+    "German": "Grundrecht",
+    "English": "fundamental right"
+  },
+  {
+    "German": "Verfassungsorgan",
+    "English": "constitutional body"
+  },
+  {
+    "German": "Rechtsprechung",
+    "English": "jurisdiction"
+  },
+  {
+    "German": "Gericht",
+    "English": "court"
+  },
+  {
+    "German": "Richter",
+    "English": "judge"
+  },
+  {
+    "German": "Verhandlung",
+    "English": "trial"
+  },
+  {
+    "German": "Verurteilung",
+    "English": "conviction"
+  },
+  {
+    "German": "Straftat",
+    "English": "offense"
+  },
+  {
+    "German": "Gefängnis",
+    "English": "prison"
+  },
+  {
+    "German": "Haftstrafe",
+    "English": "prison sentence"
+  },
+  {
+    "German": "Freiheitsstrafe",
+    "English": "imprisonment"
+  },
+  {
+    "German": "Strafgesetzbuch",
+    "English": "penal code"
+  },
+  {
+    "German": "Strafverfahren",
+    "English": "criminal proceedings"
+  },
+  {
+    "German": "Schuld",
+    "English": "guilt"
+  },
+  {
+    "German": "Unschuld",
+    "English": "innocence"
+  },
+  {
+    "German": "Beweis",
+    "English": "evidence"
+  },
+  {
+    "German": "Abgeordnete",
+    "English": "Members of parliament"
+  },
+  {
+    "German": "Selbständige",
+    "English": "self-employed individuals"
+  },
+  {
+    "German": "Operative",
+    "English": "operational branch"
+  },
+  {
+    "German": "Programm",
+    "English": "program"
+  },
+  {
+    "German": "Prozedur",
+    "English": "procedure"
+  },
+  {
+    "German": "Protokoll",
+    "English": "protocol"
+  },
+  {
+    "German": "Prozess",
+    "English": "lawsuit"
+  },
+  {
+    "German": "Pressefreiheit",
+    "English": "freedom of the press"
+  },
+  {
+    "German": "Nation",
+    "English": "Nation"
+  },
+  {
+    "German": "Bundesländer",
+    "English": "Federal States"
+  },
+  {
+    "German": "Städte",
+    "English": "Cities"
+  },
+  {
+    "German": "Verwaltung",
+    "English": "administration"
+  },
+  {
+    "German": "Regierung",
+    "English": "government"
+  },
+  {
+    "German": "Gesetzgebung",
+    "English": "legislation"
+  },
+  {
+    "German": "Staatsgewalt",
+    "English": "state power"
+  },
+  {
+    "German": "Landesregierung",
+    "English": "state government"
+  },
+  {
+    "German": "Bundesregierung",
+    "English": "federal government"
+  },
+  {
+    "German": "Verfassung",
+    "English": "constitution"
+  },
+  {
+    "German": "Rechtsstaat",
+    "English": "rule of law"
+  },
+  {
+    "German": "Sozialstaat",
+    "English": "welfare state"
+  },
+  {
+    "German": "Kommunalwahl",
+    "English": "local election"
+  },
+  {
+    "German": "Landtagswahl",
+    "English": "state election"
+  },
+  {
+    "German": "Bundestagswahl",
+    "English": "federal election"
+  },
+  {
+    "German": "Europawahl",
+    "English": "European election"
+  },
+  {
+    "German": "Bundespräsident",
+    "English": "Federal President"
+  },
+  {
+    "German": "Bundeskanzler",
+    "English": "Federal Chancellor"
+  },
+  {
+    "German": "Ministerpräsident",
+    "English": "Minister President"
+  },
+  {
+    "German": "Regierungschef",
+    "English": "head of government"
+  },
+  {
+    "German": "Parlament",
+    "English": "parliament"
+  },
+  {
+    "German": "Gesetz",
+    "English": "law"
+  },
+  {
+    "German": "Grundrecht",
+    "English": "fundamental right"
+  },
+  {
+    "German": "Verfassungsorgan",
+    "English": "constitutional body"
+  },
+  {
+    "German": "Rechtsprechung",
+    "English": "jurisdiction"
+  },
+  {
+    "German": "Gericht",
+    "English": "court"
+  },
+  {
+    "German": "Richter",
+    "English": "judge"
+  },
+  {
+    "German": "Verhandlung",
+    "English": "trial"
+  },
+  {
+    "German": "Verurteilung",
+    "English": "conviction"
+  },
+  {
+    "German": "Straftat",
+    "English": "offense"
+  },
+  {
+    "German": "Gefängnis",
+    "English": "prison"
+  },
+  {
+    "German": "Haftstrafe",
+    "English": "prison sentence"
+  },
+  {
+    "German": "Freiheitsstrafe",
+    "English": "imprisonment"
+  },
+  {
+    "German": "Strafgesetzbuch",
+    "English": "penal code"
+  },
+  {
+    "German": "Strafverfahren",
+    "English": "criminal proceedings"
+  },
+  {
+    "German": "Schuld",
+    "English": "guilt"
+  },
+  {
+    "German": "Unschuld",
+    "English": "innocence"
+  },
+  {
+    "German": "Beweis",
+    "English": "evidence"
+  },
+  {
+    "German": "Zeuge",
+    "English": "witness"
+  },
+  {
+    "German": "Elternzeit",
+    "English": "parental leave"
+  },
+  {
+    "German": "Mutterschutz",
+    "English": "maternity protection"
+  },
+  {
+    "German": "Geburtsvorbereitung",
+    "English": "birth preparation"
+  },
+  {
+    "German": "Wochenbett",
+    "English": "postpartum period"
+  },
+  {
+    "German": "Schulamt",
+    "English": "school office"
+  },
+  {
+    "German": "Jugendamt",
+    "English": "youth welfare office"
+  },
+  {
+    "German": "Gesundheitsamt",
+    "English": "health office"
+  },
+  {
+    "German": "Rentenberechnung",
+    "English": "pension calculation"
+  },
+  {
+    "German": "Lehrstellensuche",
+    "English": "apprenticeship search"
+  },
+  {
+    "German": "Steuererklärung",
+    "English": "tax declaration"
+  },
+  {
+    "German": "Krankenversicherung",
+    "English": "health insurance"
+  },
+  {
+    "German": "Anwesenheitspflicht",
+    "English": "mandatory attendance"
+  },
+  {
+    "German": "Gleichbehandlung",
+    "English": "equal treatment"
+  },
+  {
+    "German": "Versammlungsfreiheit",
+    "English": "freedom of assembly"
+  },
+  {
+    "German": "Freizügigkeit",
+    "English": "freedom of movement"
+  },
+  {
+    "German": "Bibliotheksaufsicht",
+    "English": "library supervision"
+  },
+  {
+    "German": "Lohnsteuer",
+    "English": "income tax"
+  },
+  {
+    "German": "Umsatzsteuer",
+    "English": "value-added tax"
+  },
+  {
+    "German": "Allerheiligen",
+    "English": "All Saints' Day"
+  },
+  {
+    "German": "Italien",
+    "English": "Italy"
+  },
+  {
+    "German": "Marokko",
+    "English": "Morocco"
+  },
+  {
+    "German": "Türkei",
+    "English": "Turkey"
+  },
+  {
+    "German": "Deutschland",
+    "English": "Germany"
+  },
+  {
+    "German": "Schweiz",
+    "English": "Switzerland"
+  },
+  {
+    "German": "Österreich",
+    "English": "Austria"
+  },
+  {
+    "German": "Niederlande",
+    "English": "Netherlands"
+  },
+  {
+    "German": "Belgien",
+    "English": "Belgium"
+  },
+  {
+    "German": "Spanien",
+    "English": "Spain"
+  }
+]
