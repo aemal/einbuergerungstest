@@ -30,3 +30,8 @@ export interface Data {
   };
   lands?: LandsData;
 }
+
+export interface Word {
+  German: string;
+  English: string;
+}

@@ -1,4 +1,3 @@
-// components/LoadUmamiScript.tsx
 'use client';
 
 import { useEffect } from 'react';
