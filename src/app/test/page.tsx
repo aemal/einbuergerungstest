@@ -6,11 +6,6 @@ import myData from "../../data/questions.json";
 import { Data, Question, Land } from "../../types";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 
-interface QuestionListProps {
-  data: Data;
-  randomQuestions: boolean;
-}
-
 function shuffleArray(array: any[]) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -23,6 +18,7 @@ function CountdownTimer({ initialMinutes = 60 }) {
   const [timeLeft, setTimeLeft] = useState(initialMinutes * 60);
 
   useScrollAnimation("countdown-circle");
+
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
@@ -37,7 +33,10 @@ function CountdownTimer({ initialMinutes = 60 }) {
   };
 
   return (
-    <div id="countdown-circle" className="scroll-animation flex justify-center items-center bg-blue-500 rounded-full text-white text-center w-20 h-20 fixed right-5 top-24 z-10">
+    <div
+      id="countdown-circle"
+      className="scroll-animation flex justify-center items-center bg-blue-500 rounded-full text-white text-center w-20 h-20 fixed right-5 top-24 z-10"
+    >
       {formatTime(timeLeft)}
     </div>
   );
@@ -45,23 +44,38 @@ function CountdownTimer({ initialMinutes = 60 }) {
 
 export default function TestPage() {
   const [questions, setQuestions] = useState<Question[]>([]);
-  const [selectedAnswers, setSelectedAnswers] = useState<{ [key: number]: number | null }>({});
+  const [selectedAnswers, setSelectedAnswers] = useState<{
+    [key: number]: number | null;
+  }>({});
   const [score, setScore] = useState(0);
   const [answeredQuestions, setAnsweredQuestions] = useState(0);
 
   useEffect(() => {
-    const commonQuestions: Question[] = shuffleArray(myData.common?.questions).slice(0, 30);
-    
+    if (!localStorage.getItem("selectedState")) {
+      localStorage.setItem("selectedState", "Berlin");
+    }
+
+    const commonQuestions: Question[] = shuffleArray(
+      myData.common?.questions
+    ).slice(0, 30);
+
     const selectedState = localStorage.getItem("selectedState");
-    const stateData = myData.lands.lands.find((land: Land) => land.name === selectedState);
-    const stateQuestions: Question[] = stateData ? shuffleArray(stateData.questions).slice(0, 3).map(q => ({ ...q, isState: true })) : [];
-    console.log("bbb stateQuestions", stateQuestions)
+    const stateData = myData.lands.lands.find(
+      (land: Land) => land.name === selectedState
+    );
+    const stateQuestions: Question[] = stateData
+      ? shuffleArray(stateData.questions)
+          .slice(0, 3)
+          .map((q) => ({ ...q, isState: true }))
+      : [];
     const allQuestions = [...commonQuestions, ...stateQuestions];
-    console.log("aaa allQuestions:", allQuestions)
     setQuestions(allQuestions);
   }, []);
 
-  const handleAnswerSelection = (questionIndex: number, answerIndex: number) => {
+  const handleAnswerSelection = (
+    questionIndex: number,
+    answerIndex: number
+  ) => {
     if (selectedAnswers[questionIndex] == null) {
       const correctAnswer = questions[questionIndex].answers.findIndex(
         (answer: { correct: boolean }) => answer.correct
@@ -80,11 +94,18 @@ export default function TestPage() {
   };
 
   const storeWrongQuestion = (wrongQuestion: Question) => {
-    const storedWrongQuestions = JSON.parse(localStorage.getItem("wrongQuestions") || "[]");
-    const isDuplicate = storedWrongQuestions.some((q: Question) => q.question === wrongQuestion.question);
+    const storedWrongQuestions = JSON.parse(
+      localStorage.getItem("wrongQuestions") || "[]"
+    );
+    const isDuplicate = storedWrongQuestions.some(
+      (q: Question) => q.question === wrongQuestion.question
+    );
     if (!isDuplicate) {
       storedWrongQuestions.push(wrongQuestion);
-      localStorage.setItem("wrongQuestions", JSON.stringify(storedWrongQuestions));
+      localStorage.setItem(
+        "wrongQuestions",
+        JSON.stringify(storedWrongQuestions)
+      );
     }
   };
 

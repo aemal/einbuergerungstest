@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 const useScrollAnimation = (elementId: string) => {
   useEffect(() => {
@@ -17,15 +17,9 @@ const useScrollAnimation = (elementId: string) => {
         }
         lastScrollY = scrollY;
       }
-      localStorage.setItem("scrollPosition", window.scrollY.toString());
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    const storedScrollPosition = localStorage.getItem("scrollPosition");
-    if (storedScrollPosition) {
-      window.scrollTo(0, parseInt(storedScrollPosition, 10));
-    }
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [elementId]);
