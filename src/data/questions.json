@@ -1810,6 +1810,7 @@
       {
         "question": "Der deutsche Bundespräsident Gustav Heinemann gibt Helmut Schmidt 1974 die Ernennungsurkunde zum deutschen Bundeskanzler. Was gehört zu den Aufgaben des deutschen Bundespräsidenten / der deutschen Bundespräsidentin?",
         "questionen": "The German Federal President Gustav Heinemann gives Helmut Schmidt the appointment certificate as German Chancellor in 1974. What are the tasks of the German Federal President?",
+        "image": "question70.png",
         "answers": [
           {
             "text": "Er / Sie führt die Regierungsgeschäfte.",
@@ -4676,6 +4677,7 @@
       {
         "question": "Was wollte Willy Brandt mit seinem Kniefall 1970 im ehemaligen jüdischen Ghetto in Warschau ausdrücken?",
         "questionen": "What did Willy Brandt want to express with his kneeling down in 1970 in the former Jewish ghetto in Warsaw?",
+        "image": "question181.png",
         "answers": [
           {
             "text": "Er hat sich den ehemaligen Alliierten unterworfen.",
@@ -4832,6 +4834,7 @@
       {
         "question": "Welcher deutsche Staat hatte eine schwarz-rot-goldene Flagge mit Hammer, Zirkel und Ährenkranz?",
         "questionen": "Which German state had a black-red-gold flag with a hammer, compass, and wreath of grain?",
+        "image": "question187.png",
         "answers": [
           {
             "text": "Preußen",
@@ -5613,6 +5616,7 @@
       {
         "question": "Welches Symbol ist im Plenarsaal des Deutschen Bundestages zu sehen?",
         "questionen": "Which symbol can be seen in the plenary hall of the German Bundestag?",
+        "image": "question216.jpg",
         "answers": [
           {
             "text": "der Bundesadler",
@@ -6204,6 +6208,7 @@
   {
     "question": "Der französische Staatspräsident François Mitterrand und der deutsche Bundeskanzler Helmut Kohl gedenken in Verdun gemeinsam der Toten beider Weltkriege. Welches Ziel der Europäischen Union wird bei diesem Treffen deutlich?",
     "questionen": "French President François Mitterrand and German Chancellor Helmut Kohl commemorate together the dead of both world wars in Verdun. What goal of the European Union becomes evident during this meeting?",
+    "image": "question239.jpg",
     "answers": [
       {
         "text": "Freundschaft zwischen England und Deutschland",
