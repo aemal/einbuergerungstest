@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Answer, Question } from "../types";
 import Image from "next/image";
 
@@ -9,12 +10,53 @@ interface QuestionCardProps {
   isState?: boolean;
 }
 
+const toggleMarkedQuestion = (markedQuestion: Question, setIsMarkedQuestion: (isMarked: boolean) => void) => {
+  const storedMarkedQuestions = JSON.parse(
+    localStorage.getItem("markedQuestions") || "[]"
+  );
+  const isMarked = storedMarkedQuestions.some(
+    (q: Question) => q.question === markedQuestion.question
+  );
+
+  if (isMarked) {
+    // Remove the question if it is already marked
+    const updatedMarkedQuestions = storedMarkedQuestions.filter(
+      (q: Question) => q.question !== markedQuestion.question
+    );
+    localStorage.setItem(
+      "markedQuestions",
+      JSON.stringify(updatedMarkedQuestions)
+    );
+    setIsMarkedQuestion(false);
+  } else {
+    // Add the question if it is not marked
+    storedMarkedQuestions.push(markedQuestion);
+    localStorage.setItem(
+      "markedQuestions",
+      JSON.stringify(storedMarkedQuestions)
+    );
+    setIsMarkedQuestion(true);
+  }
+};
+
 const QuestionCard = ({
   question,
   questionIndex,
   selectedAnswers,
   handleAnswerSelection,
 }: QuestionCardProps) => {
+  const [isMarkedQuestion, setIsMarkedQuestion] = useState(false);
+
+  useEffect(() => {
+    const storedMarkedQuestions = JSON.parse(
+      localStorage.getItem("markedQuestions") || "[]"
+    );
+    const isMarked = storedMarkedQuestions.some(
+      (q: Question) => q.question === question.question
+    );
+    setIsMarkedQuestion(isMarked);
+  }, [question]);
+
   return (
     <div
       className={`relative ${
@@ -36,7 +78,12 @@ const QuestionCard = ({
         selectedAnswers={selectedAnswers}
         handleAnswerSelection={handleAnswerSelection}
       />
-      <div className="flex items-center justify-center w-20 h-20 bg-blue-500 rounded-full text-white text-center absolute -mt-10 -ml-5 z-10">
+      <div
+        onClick={() => toggleMarkedQuestion(question, setIsMarkedQuestion)}
+        className={`flex items-center justify-center w-20 h-20 ${
+          isMarkedQuestion ? "bg-green-600" : "bg-blue-500"
+        } rounded-full text-white text-center absolute -mt-10 -ml-5 z-10 cursor-pointer hover:bg-green-500`}
+      >
         {questionIndex + 1}
       </div>
       <QuestionCardContent
@@ -72,7 +119,6 @@ const QuestionCardContent = ({
     <div className="flex flex-col p-4">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-xl font-bold mb-4 text-black">{questionText}</h2>
-        {}
         <div className="space-y-2">
           {answers.map((answer, answerIndex) => {
             const isSelected = selectedAnswers[questionIndex] === answerIndex;

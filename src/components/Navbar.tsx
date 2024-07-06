@@ -41,6 +41,7 @@ const Navbar = () => {
               <Link href="/words" className={`block text-black p-2 rounded ${pathname === '/words' ? 'bg-gray-200' : ''}`} onClick={closeDrawer}>Flashcards</Link>
               <Link href="/test" className={`block text-black p-2 rounded ${pathname === '/test' ? 'bg-gray-200' : ''}`} onClick={closeDrawer}>Practice Test</Link>
               <Link href="/wrong" className={`block text-black p-2 rounded ${pathname === '/wrong' ? 'bg-gray-200' : ''}`} onClick={closeDrawer}>Wrong Answers</Link>
+              <Link href="/marked" className={`block text-black p-2 rounded ${pathname === '/marked' ? 'bg-gray-200' : ''}`} onClick={closeDrawer}>Marked Questions</Link>
               <Link href="/settings" className={`block text-black p-2 rounded ${pathname === '/settings' ? 'bg-gray-200' : ''}`} onClick={closeDrawer}>Settings</Link>
               <Link href="https://buymeacoffee.com/aemal" className={`fixed bottom-2 text-black p-2 rounded`} onClick={closeDrawer}>Buy me a coffee!</Link>
             </div>
